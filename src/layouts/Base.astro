@@ -10,7 +10,6 @@ const currentPath = Astro.url.pathname;
 const nav = [
   { href: "/", label: "home" },
   { href: "/projects", label: "projects" },
-  { href: "/running", label: "running", inactive: true },
   { href: "/about", label: "about" },
   { href: "/contact", label: "contact" },
 ];
@@ -78,18 +77,14 @@ const socials = [
         <p class="location">A Coruña, Spain</p>
       </div>
       <nav>
-        {nav.map(({ href, label, inactive }) =>
-          inactive ? (
-            <span class="inactive" title="Coming soon">{label}</span>
-          ) : (
-            <a
-              href={href}
-              class:list={[{ active: currentPath === href || (href !== "/" && currentPath.startsWith(href)) }]}
-            >
-              {label}
-            </a>
-          )
-        )}
+        {nav.map(({ href, label }) => (
+          <a
+            href={href}
+            class:list={[{ active: currentPath === href || (href !== "/" && currentPath.startsWith(href)) }]}
+          >
+            {label}
+          </a>
+        ))}
       </nav>
 
       <div class="socials">
