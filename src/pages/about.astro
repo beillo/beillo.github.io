@@ -7,21 +7,21 @@ import Base from "../layouts/Base.astro";
 
   <div class="intro" style="margin-top: 1.5rem;">
     <p>
-      I'm Lucas Beillo, a data analyst and data engineer based in A Coruña, Galicia. I work across
-      business intelligence, analytics engineering, and the pipelines that feed them. Originally from
-      Brazil, I came into data through engineering — first cartographic, then environmental at UNESP —
-      which is where I learned to work with messy, spatial, real-world data.
+      I'm Lucas Beillo, a data analyst based in A Coruña, Galicia, with 4+ years of experience across
+      data engineering, analysis, and visualization in both public and private sectors. I design ETL/ELT
+      pipelines, run data-quality processes, and build BI dashboards in Power BI and Tableau that turn
+      messy data into decisions people actually act on.
     </p>
     <p>
-      Today my work is squarely in the data stack: SQL and Python for modelling and analysis, dbt for
-      transformations, and Power BI / Looker Studio for the dashboards stakeholders live in. The GIS and
-      environmental background is a differentiator, not the headline — it just means geospatial and sensor
-      data don't scare me.
+      Some of the work I'm proudest of: modelling 300k+ cadastral records in PostgreSQL/PostGIS for
+      municipal clients, and building scraping and data-quality pipelines that monitored 50+ international
+      e-commerce platforms while cutting manual work by 60%. I'm comfortable in Scrum teams and have
+      a background in environmental engineering and geospatial data — a useful edge, not the headline.
     </p>
     <p>
-      Currently pursuing a Master's in Computer Engineering (UNED) and building
-      Recolle, a civic-tech project that turns urban environmental
-      reports into structured, analysable data.
+      Originally from Brazil, I came into data through engineering — first cartographic, then environmental
+      at UNESP — before moving fully into analytics. Currently pursuing a Master's in Computer Engineering
+      at UNED, and building Recolle, a civic-tech app for geolocated incident reporting.
     </p>
   </div>
 
@@ -33,9 +33,13 @@ import Base from "../layouts/Base.astro";
           <span class="card-title">Geopixel</span>
           <span class="card-meta">2024–2026</span>
         </div>
-        <div class="card-desc">Geospatial data analyst — spatial analysis and cartographic production</div>
+        <div class="card-meta" style="margin-top: 0.15rem;">Bauru, Brazil</div>
+        <div class="card-desc" style="margin-top: 0.35rem;">
+          Data analyst — modelled 300k+ cadastral records across 4 municipalities in PostgreSQL/PostGIS,
+          and built Power BI dashboards for citizen-service and operational tracking
+        </div>
         <div class="card-tags" style="margin-top: 0.5rem;">
-          <span class="tag">QGIS</span><span class="tag">Python</span><span class="tag">GIS</span>
+          <span class="tag">PostgreSQL/PostGIS</span><span class="tag">Power BI</span><span class="tag">Python</span><span class="tag">QGIS</span>
         </div>
       </div>
       <div class="card" style="display: block; cursor: default;">
@@ -43,9 +47,13 @@ import Base from "../layouts/Base.astro";
           <span class="card-title">Ethercity</span>
           <span class="card-meta">2021–2024</span>
         </div>
-        <div class="card-desc">Data analyst — anti-fraud, web data extraction, dashboards</div>
+        <div class="card-meta" style="margin-top: 0.15rem;">São Paulo, Brazil</div>
+        <div class="card-desc" style="margin-top: 0.35rem;">
+          Data analyst — built scraping and data-quality pipelines monitoring 50+ e-commerce platforms
+          (3,000+ URLs/day), cutting manual work 60% through automation; Tableau dashboards, Scrum team
+        </div>
         <div class="card-tags" style="margin-top: 0.5rem;">
-          <span class="tag">Python</span><span class="tag">MySQL</span><span class="tag">MongoDB</span><span class="tag">Looker Studio</span>
+          <span class="tag">Python</span><span class="tag">Pydantic</span><span class="tag">MySQL</span><span class="tag">MongoDB</span><span class="tag">Tableau</span>
         </div>
       </div>
       <div class="card" style="display: block; cursor: default;">
@@ -53,9 +61,10 @@ import Base from "../layouts/Base.astro";
           <span class="card-title">Geobase</span>
           <span class="card-meta">2021</span>
         </div>
-        <div class="card-desc">Geospatial analyst — cadastral mapping and spatial data</div>
+        <div class="card-meta" style="margin-top: 0.15rem;">Presidente Prudente, Brazil</div>
+        <div class="card-desc" style="margin-top: 0.35rem;">Geoprocessing — rural property georeferencing, environmental records (CAR), spatial data QA</div>
         <div class="card-tags" style="margin-top: 0.5rem;">
-          <span class="tag">QGIS</span><span class="tag">GIS</span><span class="tag">cartography</span>
+          <span class="tag">QGIS</span><span class="tag">AutoCAD</span><span class="tag">cartography</span>
         </div>
       </div>
       <div class="card" style="display: block; cursor: default;">
@@ -63,7 +72,8 @@ import Base from "../layouts/Base.astro";
           <span class="card-title">Aerocarta</span>
           <span class="card-meta">2013</span>
         </div>
-        <div class="card-desc">Cartography and photogrammetry — mapping production</div>
+        <div class="card-meta" style="margin-top: 0.15rem;">São Paulo, Brazil</div>
+        <div class="card-desc" style="margin-top: 0.35rem;">Cartography and photogrammetry — mapping production</div>
         <div class="card-tags" style="margin-top: 0.5rem;">
           <span class="tag">cartography</span><span class="tag">photogrammetry</span>
         </div>
@@ -77,23 +87,42 @@ import Base from "../layouts/Base.astro";
       <div class="card" style="display: block; cursor: default;">
         <div style="display: flex; justify-content: space-between; gap: 1rem;">
           <span class="card-title">Máster en Ingeniería Informática</span>
-          <span class="card-meta">2024–</span>
+          <span class="card-meta">2025–2027</span>
         </div>
-        <div class="card-desc">UNED, Spain · In progress</div>
+        <div class="card-desc">UNED · A Coruña, Spain · In progress</div>
       </div>
       <div class="card" style="display: block; cursor: default;">
         <div style="display: flex; justify-content: space-between; gap: 1rem;">
           <span class="card-title">Environmental Engineering</span>
-          <span class="card-meta">2015–2023</span>
+          <span class="card-meta">2016–2023</span>
         </div>
-        <div class="card-desc">UNESP, Brazil · Thesis: Urban heat island analysis using GEE & QGIS</div>
+        <div class="card-desc">
+          UNESP · Presidente Prudente, Brazil. TFG: spatio-temporal analysis of vegetation cover and
+          surface temperature in Bauru using Google Earth Engine. PIBIC: water-quality index via
+          multivariate analysis
+        </div>
       </div>
     </div>
   </div>
 
   <div class="section">
+    <h2>Certifications</h2>
+    <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.4rem;">
+      <li class="muted">CS50: Introduction to Computer Science <span class="mono">— Harvard / edX</span></li>
+      <li class="muted">Databricks Fundamentals <span class="mono">— Databricks</span></li>
+      <li class="muted">dbt Fundamentals <span class="mono">— dbt Labs</span></li>
+      <li class="muted">Data Warehousing <span class="mono">— Snowflake University</span></li>
+      <li class="muted">Claude Code 101 <span class="mono">— Anthropic</span></li>
+      <li class="muted">Google Analytics Individual Qualification <span class="mono">— Google</span></li>
+      <li class="muted">Full-Stack ML with Metaflow <span class="mono">— Outerbounds</span></li>
+      <li class="muted">Automatizaciones Web: Selenium, Selenoid, Docker</li>
+      <li class="muted">Google Earth Engine for Water Resources Management</li>
+    </ul>
+  </div>
+
+  <div class="section">
     <h2>Languages</h2>
-    <p class="mono muted">Portuguese (native) · Spanish · English</p>
+    <p class="mono muted">Portuguese (native) · Spanish (C2) · English (C1)</p>
   </div>
 
   <div class="section">
