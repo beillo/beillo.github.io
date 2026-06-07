@@ -1,0 +1,53 @@
+---
+import Base from "../layouts/Base.astro";
+
+const races = [
+  {
+    name: "Madrid Marathon",
+    date: "April 2026",
+    distance: "42.2 km",
+    location: "Madrid, Spain",
+    notes: "First marathon. Secured bib via private transfer.",
+  },
+];
+---
+
+<Base title="Running">
+  <h1>Running</h1>
+  <p class="muted" style="margin-top: 0.5rem; margin-bottom: 0;">
+    Races, training, and notes from the road.
+  </p>
+
+  <div class="section">
+    <h2>Races</h2>
+    <div class="card-list">
+      {races.map((race) => (
+        <div class="card" style="display: block; cursor: default;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;">
+            <span class="card-title">{race.name}</span>
+            <span class="card-meta">{race.date}</span>
+          </div>
+          <div class="card-desc" style="margin-top: 0.25rem;">
+            {race.distance} · {race.location}
+          </div>
+          {race.notes && (
+            <div class="card-desc" style="margin-top: 0.15rem; font-style: italic;">
+              {race.notes}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Training</h2>
+    <p>
+      Currently training in A Coruña. Tracking via Garmin and Strava.
+      Running with a local group when schedule allows.
+    </p>
+    <p style="margin-top: 1rem;">
+      <a href="https://www.strava.com/athletes/lucasbeillo" target="_blank" rel="noopener">→ Strava profile</a>
+    </p>
+  </div>
+</Base>

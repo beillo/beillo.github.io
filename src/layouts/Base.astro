@@ -1,0 +1,58 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = "Lucas Beillo", description = "Environmental engineer & data analyst based in A Coruña." } = Astro.props;
+const currentPath = Astro.url.pathname;
+
+const nav = [
+  { href: "/", label: "home" },
+  { href: "/projects", label: "projects" },
+  { href: "/running", label: "running" },
+  { href: "/about", label: "about" },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title === "Lucas Beillo" ? title : `${title} · Lucas Beillo`}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles/global.css" />
+  </head>
+  <body>
+    <header>
+      <a href="/" class="site-name">Lucas Beillo</a>
+      <nav>
+        {nav.map(({ href, label }) => (
+          <a
+            href={href}
+            class:list={[{ active: currentPath === href || (href !== "/" && currentPath.startsWith(href)) }]}
+          >
+            {label}
+          </a>
+        ))}
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer>
+      <span>A Coruña, Galicia</span>
+      <div class="links">
+        <a href="https://github.com/lucasbeillo" target="_blank" rel="noopener">github</a>
+        <a href="https://linkedin.com/in/lucasbeillo" target="_blank" rel="noopener">linkedin</a>
+        <a href="https://www.strava.com/athletes/lucasbeillo" target="_blank" rel="noopener">strava</a>
+      </div>
+    </footer>
+  </body>
+</html>
