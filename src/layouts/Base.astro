@@ -4,7 +4,7 @@ interface Props {
   description?: string;
 }
 
-const { title = "Lucas Beillo", description = "Data analyst — business intelligence & data engineering, based in A Coruña." } = Astro.props;
+const { title = "Lucas Beillo", description = "Data analyst & data engineer based in A Coruña." } = Astro.props;
 const currentPath = Astro.url.pathname;
 
 const nav = [
@@ -24,12 +24,15 @@ const nav = [
     <title>{title === "Lucas Beillo" ? title : `${title} · Lucas Beillo`}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=PT+Mono&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=PT+Mono&family=PT+Sans:ital,wght@0,400;0,700;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/styles/global.css" />
   </head>
   <body>
-    <header>
-      <a href="/" class="site-name">Lucas Beillo</a>
+    <aside class="sidebar">
+      <a href="/" class="brand">
+        <img class="avatar" src="/images/me.jpg" alt="Lucas Beillo" />
+        <span class="brand-name">Lucas Beillo</span>
+      </a>
       <nav>
         {nav.map(({ href, label }) => (
           <a
@@ -40,19 +43,21 @@ const nav = [
           </a>
         ))}
       </nav>
-    </header>
+    </aside>
 
-    <main>
-      <slot />
-    </main>
+    <div class="main-col">
+      <main class="content">
+        <slot />
+      </main>
 
-    <footer>
-      <span>A Coruña, Galicia</span>
-      <div class="links">
-        <a href="https://github.com/lucasbeillo" target="_blank" rel="noopener">github</a>
-        <a href="https://linkedin.com/in/lucasbeillo" target="_blank" rel="noopener">linkedin</a>
-        <a href="https://www.strava.com/athletes/lucasbeillo" target="_blank" rel="noopener">strava</a>
-      </div>
-    </footer>
+      <footer>
+        <span>A Coruña, Galicia</span>
+        <div class="links">
+          <a href="https://github.com/beillo" target="_blank" rel="noopener">github</a>
+          <a href="https://linkedin.com/in/lucasbeillo" target="_blank" rel="noopener">linkedin</a>
+          <a href="https://www.strava.com/athletes/lucasbeillo" target="_blank" rel="noopener">strava</a>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>

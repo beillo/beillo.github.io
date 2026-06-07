@@ -4,57 +4,64 @@ import Base from "../layouts/Base.astro";
 
 <Base>
   <div class="intro">
-    <img class="avatar" src="/images/me.jpg" alt="Lucas Beillo" />
     <h1>Lucas Beillo</h1>
-    <p class="muted mono" style="margin-bottom: 2rem;">Data analyst · BI & data engineering · A Coruña, Spain</p>
+    <p class="muted mono" style="margin-bottom: 2rem;">Data analyst &amp; data engineer · A Coruña, Spain</p>
 
     <p>
-      I'm a data analyst working across business intelligence, analytics engineering, and data pipelines —
-      turning messy, real-world data into dashboards, models, and metrics that teams actually use to decide things.
+      I build and analyze data systems — pipelines, warehouses, and the dashboards and models that sit on top
+      of them. Day to day that's Python, SQL, dbt, and DuckDB.
     </p>
     <p>
-      Day to day that means SQL, Python, dbt, and BI tools like Power BI and Looker Studio. A background in GIS
-      and environmental science is my edge: I'm comfortable with spatial, sensor, and geodata that most analysts
-      avoid — but the core of the work is the data stack, not the map.
+      A background in GIS and environmental analysis is a plus, not the point: spatial and sensor data don't
+      scare me, but the work is the data stack.
     </p>
     <p>
-      Currently building <a href="https://recolle.app" target="_blank" rel="noopener">Recolle</a>,
-      a civic-tech platform that turns urban waste and environmental reports into structured, queryable data
-      for cities in Galicia.
+      On the side I build Life Tracker, a personal data warehouse that pulls my own data from five sources
+      into a single analytical model — an excuse to run a full pipeline end to end.
     </p>
     <p>
-      Outside work, I'm usually running — completed the <a href="/running">Madrid Marathon</a> in 2026.
+      Outside work, I run. More on that soon.
     </p>
   </div>
 
   <div class="section">
     <h2>Recent projects</h2>
     <div class="card-list">
-      <a class="card" href="/projects/recolle">
-        <span class="card-title">Recolle</span>
-        <span class="card-meta">2025–</span>
-        <span class="card-desc">Civic-tech platform for urban waste reporting and environmental monitoring in A Coruña.</span>
+      <div class="card" style="display: block;">
+        <div style="display: flex; justify-content: space-between; gap: 1rem;">
+          <span class="card-title">Life Tracker <span class="mono muted">(healthkit)</span></span>
+          <span class="card-meta">in development</span>
+        </div>
+        <span class="card-desc">
+          Personal data warehouse aggregating five sources into one analytical model.
+          Pipeline: Python → DuckDB → dbt → Flask API → React dashboard.
+        </span>
         <div class="card-tags">
           <span class="tag">Python</span>
-          <span class="tag">GIS</span>
-          <span class="tag">civic-tech</span>
+          <span class="tag">DuckDB</span>
+          <span class="tag">dbt</span>
+          <span class="tag">Flask</span>
+          <span class="tag">React</span>
         </div>
-      </a>
-      <a class="card" href="/projects/urban-heat">
-        <span class="card-title">Urban Heat Island Analysis</span>
-        <span class="card-meta">2023</span>
-        <span class="card-desc">Thesis work analyzing vegetation cover and heat distribution in Bauru using GEE and QGIS.</span>
+      </div>
+
+      <div class="card" style="display: block;">
+        <div style="display: flex; justify-content: space-between; gap: 1rem;">
+          <span class="card-title">Recolle</span>
+          <span class="card-meta">2025–</span>
+        </div>
+        <span class="card-desc">Civic-tech platform turning urban waste and environmental reports into structured, queryable data for Galician cities.</span>
         <div class="card-tags">
-          <span class="tag">Google Earth Engine</span>
-          <span class="tag">QGIS</span>
           <span class="tag">Python</span>
+          <span class="tag">SQL</span>
+          <span class="tag">data pipeline</span>
         </div>
-      </a>
+      </div>
     </div>
   </div>
 
   <div class="section">
     <h2>Stack</h2>
-    <p class="mono muted">SQL · Python · dbt · Power BI · Looker Studio · QGIS · Git</p>
+    <p class="mono muted">SQL · Python · DuckDB · dbt · Flask · React · Power BI · QGIS · Git</p>
   </div>
 </Base>

@@ -1,13 +1,14 @@
 :root {
   --bg: #ffffff;
-  --fg: #1a1a1a;
+  --fg: #111111;
   --muted: #555555;
-  --border: #d8d8d8;
-  --accent: #1a56b0;
-  --mono: "PT Mono", "SFMono-Regular", monospace;
+  --border: #e2e2e2;
+  --rule: #bbbbbb;
+  --serif: "PT Serif", Georgia, "Times New Roman", serif;
   --sans: "PT Sans", system-ui, sans-serif;
-  --serif: "PT Serif", Georgia, serif;
-  --max-w: 680px;
+  --mono: "PT Mono", "SFMono-Regular", monospace;
+  --sidebar-w: 200px;
+  --content-w: 680px;
 }
 
 *, *::before, *::after {
@@ -19,73 +20,102 @@
 html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 body {
   background: var(--bg);
   color: var(--fg);
-  font-family: var(--sans);
+  font-family: var(--serif);
   font-weight: 400;
-  line-height: 1.65;
+  line-height: 1.7;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
   min-height: 100vh;
+}
+
+/* ── sidebar ── */
+.sidebar {
+  width: var(--sidebar-w);
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  height: 100vh;
+  padding: 3rem 1.5rem 2rem 2rem;
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
 }
 
-/* ── header ── */
-header {
-  max-width: var(--max-w);
-  margin: 0 auto;
-  padding: 2.5rem 1.5rem 0;
+.brand {
   display: flex;
-  align-items: baseline;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.site-name {
-  font-family: var(--mono);
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--fg);
+  flex-direction: column;
+  gap: 0.85rem;
   text-decoration: none;
-  letter-spacing: 0.02em;
-  flex-shrink: 0;
+  color: var(--fg);
 }
 
-nav {
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #f0f0f0;
+  display: block;
+}
+
+.brand-name {
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--fg);
+}
+
+.sidebar nav {
   display: flex;
-  gap: 1.25rem;
+  flex-direction: column;
+  gap: 0.4rem;
 }
 
-nav a {
-  font-family: var(--mono);
-  font-size: 0.78rem;
+.sidebar nav a {
+  font-family: var(--sans);
+  font-size: 0.9rem;
   color: var(--muted);
   text-decoration: none;
-  letter-spacing: 0.03em;
+  width: fit-content;
   transition: color 0.15s;
 }
 
-nav a:hover,
-nav a.active {
+.sidebar nav a:hover,
+.sidebar nav a.active {
   color: var(--fg);
 }
 
-/* ── main ── */
-main {
+/* ── main column ── */
+.main-col {
   flex: 1;
-  max-width: var(--max-w);
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main.content {
+  flex: 1;
   width: 100%;
-  margin: 0 auto;
-  padding: 4rem 1.5rem 3rem;
+  max-width: var(--content-w);
+  padding: 3rem 2rem 2rem;
 }
 
 /* ── footer ── */
 footer {
-  max-width: var(--max-w);
-  margin: 0 auto;
-  padding: 1.5rem 1.5rem 2.5rem;
+  max-width: var(--content-w);
+  width: 100%;
+  padding: 1.5rem 2rem 2.5rem;
+  margin-top: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -114,19 +144,19 @@ footer a:hover {
 
 /* ── typography ── */
 h1 {
-  font-family: var(--sans);
-  font-size: 1.6rem;
+  font-family: var(--serif);
+  font-size: 1.7rem;
   font-weight: 700;
   line-height: 1.25;
   margin-bottom: 0.5rem;
   letter-spacing: -0.01em;
-  color: #000;
+  color: var(--fg);
 }
 
 h2 {
   font-family: var(--mono);
   font-size: 0.72rem;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
@@ -134,8 +164,8 @@ h2 {
 }
 
 h3 {
-  font-size: 1rem;
-  font-weight: 400;
+  font-size: 1.05rem;
+  font-weight: 700;
   margin-bottom: 0.25rem;
 }
 
@@ -148,13 +178,18 @@ p:last-child {
   margin-bottom: 0;
 }
 
+/* ── links: subtle underline, discreet color ── */
 a {
-  color: var(--accent);
-  text-decoration: none;
+  color: var(--fg);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  text-decoration-color: var(--rule);
+  transition: text-decoration-color 0.15s;
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration-color: var(--fg);
 }
 
 /* ── utilities ── */
@@ -179,7 +214,7 @@ a:hover {
   border-radius: 2px;
 }
 
-/* ── project / running cards ── */
+/* ── cards ── */
 .card-list {
   display: flex;
   flex-direction: column;
@@ -202,17 +237,18 @@ a:hover {
   border-top: 1px solid var(--border);
 }
 
-.card:hover {
+a.card:hover {
   opacity: 0.7;
 }
 
 .card-title {
-  font-size: 0.95rem;
-  font-weight: 400;
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 700;
 }
 
 .card-desc {
-  font-size: 0.82rem;
+  font-size: 0.88rem;
   color: var(--muted);
   grid-column: 1;
   margin-top: 0.1rem;
@@ -223,35 +259,21 @@ a:hover {
   font-size: 0.7rem;
   color: var(--muted);
   white-space: nowrap;
-  margin-top: 0.15rem;
+  margin-top: 0.2rem;
 }
 
 .card-tags {
   display: flex;
   gap: 0.35rem;
   flex-wrap: wrap;
-  margin-top: 0.5rem;
+  margin-top: 0.6rem;
   grid-column: 1 / -1;
 }
 
-/* ── home photo ── */
-.avatar {
-  display: block;
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 3px;
-  margin-bottom: 1.75rem;
-}
-
 /* ── intro block ── */
-.intro {
-  margin-bottom: 0;
-}
-
 .intro p {
-  font-size: 1rem;
-  line-height: 1.8;
+  font-size: 1.05rem;
+  line-height: 1.75;
   color: var(--fg);
 }
 
@@ -260,15 +282,52 @@ a:hover {
   margin-top: 3.5rem;
 }
 
-/* ── responsive ── */
-@media (max-width: 600px) {
-  header {
-    gap: 1rem;
-    padding-top: 1.75rem;
+/* ── responsive: sidebar → compact top header ── */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    align-items: stretch;
   }
 
-  main {
-    padding-top: 2.5rem;
+  .sidebar {
+    width: auto;
+    height: auto;
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .brand {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .brand-name {
+    font-size: 0.92rem;
+  }
+
+  .sidebar nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    margin-left: auto;
+  }
+
+  main.content {
+    padding: 2.25rem 1.5rem 1.5rem;
+  }
+
+  footer {
+    padding: 1.5rem 1.5rem 2rem;
   }
 
   .card {
