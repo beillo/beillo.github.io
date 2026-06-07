@@ -46,7 +46,7 @@ body {
   padding: 3rem 1.5rem 2rem 2rem;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.1rem;
 }
 
 .identity {
@@ -71,8 +71,8 @@ body {
 }
 
 .location {
-  font-family: var(--mono);
-  font-size: 0.72rem;
+  font-family: var(--sans);
+  font-size: 0.78rem;
   color: var(--muted);
 }
 
@@ -111,6 +111,13 @@ body {
 .sidebar nav a:hover,
 .sidebar nav a.active {
   color: var(--fg);
+}
+
+.sidebar nav .inactive {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  color: var(--rule);
+  cursor: default;
 }
 
 /* ── social icons ── */
