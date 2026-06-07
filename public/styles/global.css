@@ -94,6 +94,33 @@ body {
   color: var(--fg);
 }
 
+/* ── social icons ── */
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.socials a {
+  display: inline-flex;
+  color: var(--muted);
+  text-decoration: none;
+  line-height: 0;
+  transition: color 0.15s ease;
+}
+
+.socials a:hover {
+  color: var(--fg);
+}
+
+.socials svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  display: block;
+}
+
 /* ── main column ── */
 .main-col {
   flex: 1;
@@ -295,7 +322,8 @@ a.card:hover {
     position: static;
     flex-direction: row;
     align-items: center;
-    gap: 0.85rem;
+    flex-wrap: wrap;
+    gap: 0.85rem 1rem;
     padding: 1.25rem 1.5rem;
     border-bottom: 1px solid var(--border);
   }
