@@ -12,6 +12,7 @@ const nav = [
   { href: "/projects", label: "projects" },
   { href: "/running", label: "running" },
   { href: "/about", label: "about" },
+  { href: "/contact", label: "contact" },
 ];
 
 // Brand glyphs from Simple Icons (CC0); Skoob is a custom book glyph (not in Simple Icons).
@@ -68,10 +69,14 @@ const socials = [
   </head>
   <body>
     <aside class="sidebar">
-      <a href="/" class="brand">
-        <img class="avatar" src="/images/me.png" alt="Lucas Beillo" />
-        <span class="brand-name">Lucas Beillo</span>
-      </a>
+      <div class="identity">
+        <a href="/" class="brand">
+          <img class="avatar" src="/images/me.png" alt="Lucas Beillo" />
+          <span class="brand-name">Lucas Beillo</span>
+        </a>
+        <p class="tagline">Data Analyst · BI &amp; Visualization · GIS · Engineer</p>
+        <p class="location">A Coruña, Spain</p>
+      </div>
       <nav>
         {nav.map(({ href, label }) => (
           <a
@@ -98,12 +103,10 @@ const socials = [
       </main>
 
       <footer>
-        <span>A Coruña, Galicia</span>
-        <div class="links">
-          <a href="https://github.com/beillo" target="_blank" rel="noopener">github</a>
-          <a href="https://linkedin.com/in/lucasbeillo" target="_blank" rel="noopener">linkedin</a>
-          <a href="https://www.strava.com/athletes/lucasbeillo" target="_blank" rel="noopener">strava</a>
-        </div>
+        <span>
+          © Lucas Beillo 2026. Theme by Giulio Fidente on
+          <a href="https://github.com/giulivo/pelican-svbhack" target="_blank" rel="noopener">GitHub</a>
+        </span>
       </footer>
     </div>
   </body>
